@@ -1,0 +1,38 @@
+<!--pages/Control/Ftask/Ftask.wxml-->
+<!-- 顶部栏 -->
+ <view class="waveWrapper waveAnimation" style="height:{{navtop+navheigh*1.5}}px;">
+	<view class="waveWrapperInner bgTop" >
+		<view class="wave waveTop" style="background-image: url({{navimage}});background-size: 540rpx {{navheigh}}px;"></view>
+	</view>
+	<view class="waveWrapperInner bgMiddle">
+		<view class="wave waveMiddle" style="background-image: url({{navimage}});  background-size: 1080rpx {{navheigh*0.8}}px;"></view>
+	</view>
+	<view class="waveWrapperInner bgBottom;">
+		<view class="wave waveBottom" style="background-image: url({{navimage}});  background-size: 540rpx {{navheigh*0.6}}px;"></view>
+	</view>
+
+  <view  bindtap="backPage">
+    <image style=" position:absolute; top:{{navtop+navheigh*0.2}}px; left:{{navheigh*0.4}}px; height:{{navheigh*0.6}}px; width:{{navheigh*0.4}}px "  src="/icon/back.png"></image>
+    <text  style=" position:absolute; top:{{navtop}}px; left:{{navheigh*1.2}}px; height:{{navheigh}}px;line-height:{{navheigh}}px;  font-size: {{navheigh*0.6}}px;">条件控制</text> 
+  </view>
+</view>
+
+<scroll-view
+    scroll-y="true"
+    style="height: {{screenHeight-navtop-navheigh*1.5}}px;"
+ >
+
+  <view class="body">
+    <view class="taskbox" wx:for="{{task}}" wx:key="index" data-taskid="{{item.taskId}}">
+ 
+      <view class="title">
+        <view  class="taskname">{{item.taskName}}</view> 
+        <image src="../../../icon/del.png" data-taskid="{{item.taskId}}" id="{{index}}"  bindtap='deletetask'></image>
+      </view>
+
+      <view class="taskContent">执行时间：{{item.taskTime}}</view>
+      <view class="tasktf">执行任务：{{item.taskName}}</view>
+    </view>
+  </view>
+</scroll-view>
+

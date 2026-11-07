@@ -1,0 +1,39 @@
+<!--pages/Control/mainUI/mainUI.wxml-->
+<view class="content"> 
+    <!-- <image src='/icon/BasicsBg.png' class='png' ></image> -->
+    
+
+    <view class="toollist">
+     
+   <view class="tool1" bindtap="bSensor">
+        <text>传感</text>
+      </view>
+      
+
+
+<view class="tool2" bindtap="aSwitch">
+        <text>开关</text> 
+      </view>
+
+  <view class="tool4" bindtap="cInfredcont">
+        <text>遥控</text>
+      </view>
+
+  <view class="tool3" bindtap="dPWMotor">
+        <text>电机</text>
+      </view>
+   
+      
+      <view class="tool5" bindtap="edetector">
+        <text>条件</text>
+      </view>
+
+    
+      <view class="tool6" bindtap="ftask">
+        <text>任务</text>
+      </view>
+
+      
+    </view>
+
+</view>

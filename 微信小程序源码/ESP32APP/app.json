@@ -1,0 +1,75 @@
+{
+  "pages": [
+      
+  "pages/Control/mainUI/mainUI",
+    "pages/Control/Ftask/Ftask",
+
+    "pages/User/userHome/userHome",
+    "pages/User/Fabout/Fabout",
+
+"pages/User/CdevicePower/CdevicePower",
+    "pages/User/DHelp/DHelp",
+    "pages/User/EaboutMe/EaboutMe",
+ 
+
+
+    "pages/Control/Edetector/Edetector",
+    "pages/Control/Bsensor/Bsensor",
+
+   
+   
+    "pages/User/Bnetwork/Bnetwork",
+    
+    "pages/BLE/bleConnect/bleConnect",
+    
+    "pages/Control/Aswitch/Aswitch",
+    "pages/User/Activate/Activate",
+ 
+    
+
+    "pages/Control/DPWMotor/DPWMotor",
+
+    "pages/Control/Cinfredcont/Cinfredcont",
+
+    "pages/BLE/bleSentData/bleSentData",
+  
+    "pages/BLE/about/about"
+ 
+  
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#39b54a",
+    "navigationBarTitleText": "智能家居",
+    "navigationStyle": "custom",
+    "navigationBarTextStyle": "black"  
+  },
+  "tabBar": {
+    "position": "bottom",
+    "backgroundColor": "#F8F8F8",
+    "borderStyle": "black",
+    "selectedColor": "#00AAFF",
+    "list": [
+      {
+        "pagePath": "pages/BLE/bleConnect/bleConnect",
+        "text": "蓝牙",
+        "iconPath": "icon/BLEB.png",
+        "selectedIconPath": "icon/BLEA.png"
+      },
+      {
+        "pagePath": "pages/Control/mainUI/mainUI",
+        "text": "设备",
+        "iconPath": "icon/HOMEB.png",
+        "selectedIconPath": "icon/HOMEA.png"
+      },
+      {
+        "pagePath": "pages/User/userHome/userHome",
+        "text": "我的",
+        "iconPath": "icon/MYB.png",
+        "selectedIconPath": "icon/MYA.png"
+      }
+    ]
+  },
+
+
+  "sitemapLocation": "sitemap.json"
+}

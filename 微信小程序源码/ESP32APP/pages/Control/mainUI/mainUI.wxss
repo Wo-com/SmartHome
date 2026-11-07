@@ -1,0 +1,83 @@
+/* pages/Control/mainUI/mainUI.wxss */
+
+
+.png{
+  width:100%;
+  height:486rpx;
+}
+
+
+.toollist{
+  padding-top: 200rpx;/********/
+
+  display: flex;
+  display: -webkit-flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+
+.tool1, .tool2, .tool3, .tool4, .tool5,.tool6{
+  width:40%;
+  height: 200rpx;
+  border-radius: 20rpx;
+  margin: 30rpx;
+  color: white;     /*字体颜色*/
+  font-size: 50rpx;   /*字体大小*/
+  display: flex;                /*布局*/
+  flex-direction: row;         /* 横向*/
+  flex-wrap: wrap;              /*换行*/
+ justify-content:space-around; /*居中 */
+  align-items: center;          /*上下居中*/
+}
+
+
+
+image{
+  width: 160rpx;
+  height: 80rpx;
+}
+
+.tool1{
+ background : linear-gradient(to right bottom, #d6ff63 0%, #03ce9b 100%);
+  box-shadow: 8px 8px 2px -2px #aad8bd; 
+
+
+  animation: fadeLeftIn 1s;                /*左入动画*/
+}
+
+.tool2{
+  background: linear-gradient(to right bottom, #b3fcdb 0%, rgb(2, 168, 180) 100%);
+  box-shadow: 10px 10px 2px -2px #b7d7f7; 
+  animation: fadeRightIn 1s;                /*右入动画*/
+}
+
+.tool3{
+ 
+  background : linear-gradient(to right bottom, #e571f5 0%, #6c2be6 100%);
+  box-shadow:10px 10px 2px -2px #d3c5ec; 
+  animation: fadeLeftIn 2s;                /*左入动画*/
+}
+
+.tool4{
+background : linear-gradient(to right bottom, #f4f810 0%, #f07025 100%);
+    /* background : linear-gradient(to right bottom, #e1f009 0%, #f17832 100%); */
+  box-shadow: 10px 10px 2px -2px #f5dab4; 
+  animation: fadeRightIn 2s;                /*右入动画*/
+}
+.tool5{
+ background : linear-gradient(to right bottom,  #f80ed9 0%,#eb2546 100%);
+  box-shadow: 8px 8px 2px -2px #f1cae0; 
+  
+  animation: fadeRightIn 2s;                /*右入动画*/
+}
+.tool6{
+
+  background: linear-gradient(to right bottom, #0cceff 0%, #3c4de6 100%);
+  box-shadow: 10px 10px 2px -2px #bec5eb; 
+  animation: fadeRightIn 2s;                /*右入动画*/
+}
+
+
+

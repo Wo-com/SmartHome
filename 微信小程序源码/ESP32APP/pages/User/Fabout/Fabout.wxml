@@ -1,0 +1,13 @@
+
+  <view bindtap="backPage" >
+    <image style=" position:absolute; top:{{navtop+navheigh*0.2}}px; left:{{navheigh*0.4}}px; height:{{navheigh*0.6}}px; width:{{navheigh*0.4}}px "  src="/icon/back.png"></image>
+    <text  style=" position:absolute; top:{{navtop}}px; left:{{navheigh*1.2}}px; height:{{navheigh}}px;line-height:{{navheigh}}px;  font-size: {{navheigh*0.6}}px;">关于</text> 
+  </view>
+
+
+
+
+<view class="init">版本 2.1.5</view>
+
+
+

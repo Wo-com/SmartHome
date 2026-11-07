@@ -1,0 +1,268 @@
+/*顶部导航栏  fiexd布局 topviewbox占据塌陷位置*/
+@keyframes move_wave {
+  0% {
+    transform: translateX(0) translateZ(0) scaleY(1);
+  }
+  50% {
+    transform: translateX(-25%) translateZ(0) scaleY(1);
+  }
+  100% {
+    transform: translateX(-50%) translateZ(0) scaleY(1);
+  }
+}
+
+.waveWrapper {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  background: #73f3be;
+}
+
+.waveWrapperInner {
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
+  height: 100%;
+  bottom: -1rpx;
+}
+
+.bgTop {
+  opacity: 0.4;   /*透明度*/
+}
+.bgMiddle {
+  opacity: 0.6;
+}
+/* .bgBottom {
+  opacity: 0.8; 
+} */
+
+.wave {
+  position: absolute;
+  left: 0;
+  width: 2160rpx;
+  height: 100%;
+  background-repeat: repeat no-repeat;
+  background-position: 0 bottom;
+  transform-origin: center bottom;
+}
+
+.wave image {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+
+}
+
+.waveAnimation .waveTop {
+  animation: move_wave 13s linear infinite;
+}
+.waveAnimation .waveMiddle {
+  animation: move_wave 18s linear infinite;
+}
+.waveAnimation .waveBottom {
+  animation: move_wave 9s linear infinite;
+}
+
+
+
+
+
+/* 内容 */
+
+
+.devicetitle{
+  position: relative;
+  width: 100%;
+  height: 80rpx;
+  font-size: 40rpx;
+  line-height: 80rpx;
+
+  /* position:relative; */
+  z-index:1;
+
+  background-color: white;
+}
+.line{
+  width: 100;
+  border-bottom: 1px solid #F0F0F0
+}
+
+
+.deviceItem{
+  position:relative;
+  z-index:1;
+  margin-top: 20rpx;
+}
+
+.deviceBox{
+  position:relative;
+  z-index:1;
+  /* border: 1rpx solid blue; */
+  width: 100%;
+  background-color: white;
+  display: flex;
+  flex-direction: row;	/*横向布局*/
+  flex-wrap:wrap;      		/* 	内容过多换行 */
+  align-items: center;	  /* 上下居中 */
+  justify-content:left;	/*两端自适应*/
+}
+
+.devices{
+  /* border: 1rpx solid yellow; */
+  border-left: 1rpx solid #F0F0F0;
+  text-align: center;
+  width: 200rpx;
+}
+
+.deviceName{
+
+  /* 文字省略 */
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+
+.deviceIco image{
+  width: 100rpx;
+  height: 100rpx;
+}
+
+
+
+
+
+.deviceUserItem{
+  position:relative;
+  z-index:1;
+  margin-top: 40rpx;
+}
+
+.deviceUserBox{
+  width: 100%;
+
+  background-color: white;
+  display: flex;
+  flex-direction: row;	/*横向布局*/
+  flex-wrap:wrap;      		/* 	内容过多换行 */
+  align-items: center;	        /* 上下居中 */
+  justify-content:left;	/*两端自适应*/
+}
+
+.deviceUser{
+  /* border: 1rpx solid yellow; */
+  border-left: 1rpx solid #F0F0F0;
+  width: 200rpx;
+  line-height: 40rpx;
+  text-align: center;
+}
+
+.deviceUserName{
+   /* border: 1rpx solid blue; */
+  /* height: 40rpx;
+  width: 100%; */
+  
+
+  /* 文字省略 */
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+
+.deviceUserIco image{
+  width: 100rpx;
+  height: 100rpx;
+}
+
+
+
+
+
+
+/**** 弹出 输入 框*****/
+
+/* 防止误触蒙版 */
+.model{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  z-index: 999;
+  opacity: 0.5;
+  top: 0;
+  left:0;
+}
+
+.modalDlg{
+  width: 80%;
+  position: fixed;
+  top:350rpx;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 10rpx;
+  /* display: flex;
+  flex-direction: column; 
+  align-items: center; */
+}
+
+/* .title{
+  text-align: center;
+  line-height: 80rpx;
+  height: 80rpx;
+  width: 100%;
+  color: #0081ff;
+   border: 1rpx solid black; 
+} */
+
+.choosebox{
+  width: 100%;
+
+  display: flex;
+  flex-wrap:wrap;      			      /*内容过多换行*/
+  align-items: center;	          /* 上下居中 */
+  justify-content:space-around;	  /*两端对齐*/
+}
+
+
+.item{
+  line-height: 80rpx;
+  width: 40%;
+  height: 80rpx;
+  /* border: 1rpx solid red; */
+  text-align: center;
+}
+
+
+
+
+.btnBox{
+  display: flex;
+  flex-direction: row;
+  align-items: center;	           /*上下居中*/
+  justify-content: space-around;   /*左右对齐*/
+
+  height: 100rpx;
+  width: 100%;
+  
+  border-top: 1px solid #000; 
+font-size: 40rpx;
+text-align: center;
+}
+.isbtn{
+  width: 50%;
+  color: #0c7aa5;
+  /* border-right: 1rpx solid black; */
+
+}
+
+ .bkbtn{
+  width: 50%;
+
+  color: #0b9c1f;
+   
+ }
+
+
+

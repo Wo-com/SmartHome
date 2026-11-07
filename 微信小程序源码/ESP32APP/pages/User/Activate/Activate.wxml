@@ -1,0 +1,45 @@
+<!--pages/User/Activate/Activate.wxml-->
+
+<!-- 顶部栏 -->
+ <view class="waveWrapper waveAnimation" style="height:{{navtop+navheigh*1.5}}px;">
+	<view class="waveWrapperInner bgTop" >
+		<view class="wave waveTop" style="background-image: url({{navimage}});background-size: 540rpx {{navheigh}}px;"></view>
+	</view>
+	<view class="waveWrapperInner bgMiddle">
+		<view class="wave waveMiddle" style="background-image: url({{navimage}});  background-size: 1080rpx {{navheigh*0.8}}px;"></view>
+	</view>
+	<view class="waveWrapperInner bgBottom;">
+		<view class="wave waveBottom" style="background-image: url({{navimage}});  background-size: 540rpx {{navheigh*0.6}}px;"></view>
+	</view>
+
+  <view  bindtap="backPage">
+    <image style=" position:absolute; top:{{navtop+navheigh*0.2}}px; left:{{navheigh*0.4}}px; height:{{navheigh*0.6}}px; width:{{navheigh*0.4}}px "  src="/icon/back.png"></image>
+    <text  style=" position:absolute; top:{{navtop}}px; left:{{navheigh*1.2}}px; height:{{navheigh}}px;line-height:{{navheigh}}px;  font-size: {{navheigh*0.6}}px;">激活设备</text> 
+  </view>
+</view>
+
+
+
+
+<view class="content">
+  <view wx:if="{{device}}">
+    <form bindsubmit="formSubmit"> 
+      <view class="inputbox">
+        <input class="weui-input" type='text' value=''  name='activatekey' auto-focus placeholder="请输入设备激活码"/>
+      </view>
+
+      <view class="sendButton"> 
+        <button type="primary" form-type="submit">点击激活</button>
+      </view>
+
+    </form>
+  </view>
+
+  <view wx:else>
+    <view class="manageDevice">已经激活</view>
+  </view>  
+
+</view>
+
+
+

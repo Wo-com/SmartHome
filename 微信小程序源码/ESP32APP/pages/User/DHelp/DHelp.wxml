@@ -1,0 +1,59 @@
+
+<!-- 顶部栏 -->
+ <view class="waveWrapper waveAnimation" style="height:{{navtop+navheigh*1.5}}px;">
+	<view class="waveWrapperInner bgTop" >
+		<view class="wave waveTop" style="background-image: url({{navimage}});background-size: 540rpx {{navheigh}}px;"></view>
+	</view>
+	<view class="waveWrapperInner bgMiddle">
+		<view class="wave waveMiddle" style="background-image: url({{navimage}});  background-size: 1080rpx {{navheigh*0.8}}px;"></view>
+	</view>
+	<view class="waveWrapperInner bgBottom;">
+		<view class="wave waveBottom" style="background-image: url({{navimage}});  background-size: 540rpx {{navheigh*0.6}}px;"></view>
+	</view>
+
+  <view  bindtap="backPage">
+    <image style=" position:absolute; top:{{navtop+navheigh*0.2}}px; left:{{navheigh*0.4}}px; height:{{navheigh*0.6}}px; width:{{navheigh*0.4}}px "  src="/icon/back.png"></image>
+    <text  style=" position:absolute; top:{{navtop}}px; left:{{navheigh*1.2}}px; height:{{navheigh}}px;line-height:{{navheigh}}px;  font-size: {{navheigh*0.6}}px;">使用说明</text> 
+  </view>
+</view>
+
+
+
+  <!-- <view class="leftBox"> -->
+<!-- 容器 -->
+<scroll-view
+ scroll-y="true" style="height: {{screenHeight-navtop-navheigh*1.5}}px;" >
+    <!-- 左边 tab -->
+<view class="leftBox">
+
+    <scroll-view class="left-scl-view" scroll-y scl-with-animation scroll-top="{{VerticalNavTop}}" style="height:{{screenHeight-navtop-navheigh*1.5}}px">
+      <view class="left-scl-item {{index==TabCur?'left-scl-cur':''}}" wx:for="{{list}}" wx:key="index" bindtap='tabSelect' data-id="{{index}}">
+      <view class="title-text">
+        {{item.name}}
+      </view>
+    
+    </view>
+  </scroll-view>
+
+
+
+<!-- 右边的 tab -->
+
+  <scroll-view class="rightBox" scroll-y scroll-with-animation style="height:{{screenHeight-navtop-navheigh*1.5}}px" scroll-into-view="main-{{MainCur}}" bindscroll="VerticalMain">
+    <view class="rightBox" wx:for="{{list}}" wx:key="index" id="main-{{index}}">
+      
+      <view class='right_scl_item'>
+        <text>{{item.name}}</text> 
+      </view>
+
+      <view class="line"></view>
+
+      <view class="right_body_text">
+        <text>{{item.illustrate}}</text>
+      </view>
+
+    </view>
+  </scroll-view><!-- 右边 -->
+</view>
+</scroll-view>
+<!-- 容器 -->

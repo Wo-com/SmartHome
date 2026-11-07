@@ -1,0 +1,116 @@
+/* pages/Control/Edetector/Edetector.wxss */
+
+/*顶部导航栏  fiexd布局 topviewbox占据塌陷位置*/
+@keyframes move_wave {
+  0% {
+    transform: translateX(0) translateZ(0) scaleY(1);
+  }
+  50% {
+    transform: translateX(-25%) translateZ(0) scaleY(1);
+  }
+  100% {
+    transform: translateX(-50%) translateZ(0) scaleY(1);
+  }
+}
+
+.waveWrapper {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+   background : linear-gradient(to right bottom,  #f80ed9 0%,#eb2546 100%);
+
+   /* background-image: linear-gradient(to right, #ffc3a0 0%, #ffafbd 100%); */
+  /* background : linear-gradient(to right bottom, #f09819 0%, #ff5858 100%); */
+}
+
+.waveWrapperInner {
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
+  height: 100%;
+  bottom: -1rpx;
+}
+
+.bgTop {
+  opacity: 0.4;   /*透明度*/
+}
+.bgMiddle {
+  opacity: 0.6;
+}
+/* .bgBottom {
+  opacity: 0.8; 
+} */
+
+.wave {
+  position: absolute;
+  left: 0;
+  width: 2160rpx;
+  height: 100%;
+  background-repeat: repeat no-repeat;
+  background-position: 0 bottom;
+  transform-origin: center bottom;
+}
+
+.wave image {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+.waveAnimation .waveTop {
+  animation: move_wave 13s linear infinite;
+}
+.waveAnimation .waveMiddle {
+  animation: move_wave 18s linear infinite;
+}
+.waveAnimation .waveBottom {
+  animation: move_wave 9s linear infinite;
+}
+
+
+
+
+
+/* 警报 */
+.content{
+  width: 100%;
+  align-items: center;	           /*上下居中*/
+}
+
+
+.buzzerCondition{
+
+  height: 200rpx;
+  border: 1rpx solid rgb(218, 214, 214);
+  border-radius: 10rpx;
+  margin: 20rpx;
+  overflow: hidden;
+
+  background-color: white;
+}
+.buzzerhead {
+height: 100rpx;
+ font-size: 40rpx;
+background-image: linear-gradient(to right, #ffc3a0 0%, #ffafbd 100%);
+
+  display: flex;
+  flex-direction: row; 
+   align-items: center;	/* 上下居中 */
+  justify-content: space-around; 	/* 左右居中 */
+   border-bottom: 1rpx solid rgb(218, 214, 214);
+}
+.title{
+  width: 60%;
+  text-align: center;
+}
+
+.buzzerhead image{
+
+  width: 60rpx;
+  height: 60rpx;
+  /* border: 1rpx solid blue; */
+}
+
+.buzzerbody{
+
+}

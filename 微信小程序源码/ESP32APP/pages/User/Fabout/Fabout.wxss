@@ -1,0 +1,16 @@
+/* pages/User/Fabout/Fabout.wxss */
+
+
+
+
+
+
+.init{
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  height: 200rpx ;
+  font-size: 100rpx;
+ top: 40%;
+  /* border: 1rpx solid red; */
+}

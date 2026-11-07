@@ -1,0 +1,90 @@
+
+<!-- 顶部栏 -->
+ <view class="waveWrapper waveAnimation" style="height:{{navtop+navheigh*1.5}}px;">
+	<view class="waveWrapperInner bgTop" >
+		<view class="wave waveTop" style="background-image: url({{navimage}});background-size: 540rpx {{navheigh}}px;"></view>
+	</view>
+	<view class="waveWrapperInner bgMiddle">
+		<view class="wave waveMiddle" style="background-image: url({{navimage}});  background-size: 1080rpx {{navheigh*0.8}}px;"></view>
+	</view>
+	<view class="waveWrapperInner bgBottom;">
+		<view class="wave waveBottom" style="background-image: url({{navimage}});  background-size: 540rpx {{navheigh*0.6}}px;"></view>
+	</view>
+
+  <view  bindtap="backPage">
+    <image style=" position:absolute; top:{{navtop+navheigh*0.2}}px; left:{{navheigh*0.4}}px; height:{{navheigh*0.6}}px; width:{{navheigh*0.4}}px "  src="/icon/back.png"></image>
+    <text  style=" position:absolute; top:{{navtop}}px; left:{{navheigh*1.2}}px; height:{{navheigh}}px;line-height:{{navheigh}}px;  font-size: {{navheigh*0.6}}px;">开关控制</text> 
+  </view>
+</view>
+
+
+
+
+<!-- 容器 -->
+<scroll-view
+    scroll-y="true"
+    style="height: {{screenHeight-navtop-navheigh*1.5}}px;"
+ >
+  
+  <!-- 开关 -->
+  <view class="sw_item" wx:for="{{switchData}}" wx:key="index">
+
+  <!-- 为什么要两个都绑定呢？ 解决如果名称为空时点击问题 -->
+    <view class="empbox" data-name="{{item.switchName}}" data-tapid="{{index}}" data-switchid="{{item.switchId}}" bindtap='eject' id="{{index}}" >
+    </view>
+    <view class="sw_tit" data-name="{{item.switchName}}"  data-switchid="{{item.switchId}}" bindtap='eject' id="{{index}}">
+      <text >{{item.switchName}}</text> 
+    </view> 
+
+    <view class="sw_ico">
+      <switch id="{{index}}"  data-switchid="{{item.switchId}}" checked="{{item.switchState}}" color="#6FE6E6"  bindchange="switchChange" />
+    </view>
+  </view>
+
+</scroll-view>
+<!-- 容器 -->
+
+
+<!-- 档板 其他地方不能点击--> 
+<view class="model" catchtouchmove='preventTouchMove' wx:if='{{showModal}}'></view>
+<!-- 盒子 -->
+<view class="modalDlg"  wx:if='{{showModal}}'>
+  <!-- <view class="title"> 
+  </view> -->
+  <view class="inputBox">
+    <text >修改名称:</text>
+    <!-- <input bindinput='wish_put' placeholder=' 请输新名称' class='wish_put'>{{touchName}}</input> -->
+    <input bindinput='wish_put'  value="{{touchName}}" class='wish_put'></input>
+  </view>
+
+ 
+  <view class="starClockBox">
+    <text >定时开启:</text>
+    <picker mode="multiSelector" value="{{dateTime}}" bindchange="changeDateTime" bindcolumnchange="changeDateTimeColumn" range="{{dateTimeArray}}">
+      <view class="tui-picker-detail">
+      {{dateTimeArray[0][dateTime[0]]}}-{{dateTimeArray[1][dateTime[1]]}}-{{dateTimeArray[2][dateTime[2]]}} {{dateTimeArray[3][dateTime[3]]}}:{{dateTimeArray[4][dateTime[4]]}}:{{dateTimeArray[5][dateTime[5]]}}
+      </view>
+    </picker>
+  </view>
+
+  <view class="endClockBox">
+    <text >定时关闭:</text>
+    <picker mode="multiSelector" value="{{dateTime1}}" bindchange="changeDateTime1" bindcolumnchange="changeDateTimeColumn1" range="{{dateTimeArray}}">
+      <view class="tui-picker-detail">
+      {{dateTimeArray[0][dateTime1[0]]}}-{{dateTimeArray[1][dateTime1[1]]}}-{{dateTimeArray[2][dateTime1[2]]}} {{dateTimeArray[3][dateTime1[3]]}}:{{dateTimeArray[4][dateTime1[4]]}}:{{dateTimeArray[5][dateTime1[5]]}}
+      </view>
+    </picker>
+  
+  </view>
+
+  <view class="btnBox">
+    <view class="isbtn"  bindtap='ok'>
+      <text>确定</text>
+    </view>
+    <view class="centerLine"></view>
+    <view class="bkbtn"  bindtap='back'>
+      <text>返回</text>
+    </view>
+  </view>
+
+</view>

@@ -1,0 +1,240 @@
+/* pages/Control/Cinfredcont/Cinfredcont.wxss */
+
+
+/*顶部导航栏  fiexd布局 topviewbox占据塌陷位置*/
+@keyframes move_wave {
+  0% {
+    transform: translateX(0) translateZ(0) scaleY(1);
+  }
+  50% {
+    transform: translateX(-25%) translateZ(0) scaleY(1);
+  }
+  100% {
+    transform: translateX(-50%) translateZ(0) scaleY(1);
+  }
+}
+
+.waveWrapper {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  /* background : linear-gradient(to right bottom, #f4f810 0%, #f07025 100%); */
+  background: linear-gradient(to right bottom, #ffd103  0%, #ff5858 100%);
+  /* background : linear-gradient(to right bottom, #c417f8 0%, #6316f1 100%); */
+}
+
+.waveWrapperInner {
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
+  height: 100%;
+  bottom: -1rpx;
+}
+
+.bgTop {
+  opacity: 0.4;   /*透明度*/
+}
+.bgMiddle {
+  opacity: 0.6;
+}
+/* .bgBottom {
+  opacity: 0.8; 
+} */
+
+.wave {
+  position: absolute;
+  left: 0;
+  width: 2160rpx;
+  height: 100%;
+  background-repeat: repeat no-repeat;
+  background-position: 0 bottom;
+  transform-origin: center bottom;
+}
+
+.wave image {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+
+}
+
+.waveAnimation .waveTop {
+  animation: move_wave 13s linear infinite;
+}
+.waveAnimation .waveMiddle {
+  animation: move_wave 18s linear infinite;
+}
+.waveAnimation .waveBottom {
+  animation: move_wave 9s linear infinite;
+}
+
+
+
+/**********  遥控 ***********/ 
+
+.button-group {
+
+  height: 60%;
+  /* background-color: pink; */
+  display: flex;
+  justify-content: center;
+  align-items: center;	/* 上下居中 */ 
+  background: linear-gradient(#fafafa, #f8f8f8);
+}
+.outter-circle {
+  position: relative;
+  margin-left: 10rpx;
+  width: 400rpx;
+  height: 400rpx;
+  background-color:  #f8f8f8;
+  border-radius: 100%;
+  overflow: hidden;
+  transform-origin: center;    /*旋转*/
+  transform: rotate(45deg);     /*旋转*/
+  animation: rotateCircle 1s linear ;
+   
+}
+.inner-parts {
+  border-radius: 10%;
+  float: left;
+  width: 200rpx;
+  height: 200rpx;
+  line-height: 200rpx;
+  text-align: center;
+  /* background-color: #4fc3f7; */
+}
+
+
+.style0{
+  background-color: #f0c142;
+}
+.style1{
+  background-color: #ba93d8;
+}
+.style2{
+  background-color: #4fc3f7;
+}
+.style3{
+  background-color: #ff80ab;
+}
+.style4{
+  /* background-color: #ff80ab; */
+  position: absolute;
+  margin-top: 100rpx;
+  margin-left: 100rpx;
+  width: 200rpx;
+  height: 200rpx;
+  line-height: 200rpx;
+  text-align: center;
+  border-radius: 100%;
+  background-color: #f8f8f8;
+}
+
+
+.rotate {
+  display: inline-block;       /*旋转回去*/
+  transform: rotate(-45deg);   /*旋转回去*/
+}
+
+
+ @keyframes rotateCircle {
+  0% {
+    transform: rotate(-45deg);
+  }
+
+  100% {
+    transform: rotate(45deg);
+  }
+} 
+
+
+
+
+
+
+
+/**** 弹出 输入 框*****/
+
+/* 防止误触蒙版 */
+.model{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  z-index: 999;
+  opacity: 0.5;
+  top: 0;
+  left:0;
+}
+
+.modalDlg{
+  width: 80%;
+  position: fixed;
+  top:350rpx;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 10rpx;
+
+}
+
+
+.btnBox{
+  display: flex;
+  flex-direction: row;
+  align-items: center;	           /*上下居中*/
+  justify-content: space-around;   /*左右对齐*/
+
+  height: 100rpx;
+  width: 100%;
+  
+  /* border: 1px solid #000;  */
+font-size: 40rpx;
+text-align: center;
+}
+.isbtn{
+  width: 50%;
+  color: #0c7aa5;
+  /* border-right: 1rpx solid black; */
+
+}
+.centerLine{
+  width: 1px;
+  background-color: #c6c6c6;
+  height: 100rpx;
+}
+ .bkbtn{
+  width: 50%;
+  text-align: center;
+  color: #0b9c1f;
+   
+ }
+
+
+
+
+
+
+.inputBox,.valueBox,.starClockBox{
+  height: 65rpx;
+  text-align: center;
+  border-bottom:1rpx solid #c6c6c6;
+  display: flex;
+  flex-direction: row; 
+  align-items: center;
+  justify-content: space-around;
+}
+
+
+
+.inputBox text,.starClockBox text,.valueBox text{
+ width: 30%;
+  /* border: 1rpx solid blue; */
+}
+.inputName, .choosetime,.pwmvalue{
+  width: 60%;
+  /* border: 1rpx solid red; */
+}
+

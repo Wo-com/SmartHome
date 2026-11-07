@@ -1,0 +1,95 @@
+/* pages/User/Bnetwork/Bnetwork.wxss */
+
+/*顶部导航栏  fiexd布局 topviewbox占据塌陷位置*/
+@keyframes move_wave {
+  0% {
+    transform: translateX(0) translateZ(0) scaleY(1);
+  }
+  50% {
+    transform: translateX(-25%) translateZ(0) scaleY(1);
+  }
+  100% {
+    transform: translateX(-50%) translateZ(0) scaleY(1);
+  }
+}
+
+.waveWrapper {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  background: #7b68bd;
+}
+
+.waveWrapperInner {
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
+  height: 100%;
+  bottom: -1rpx;
+}
+
+.bgTop {
+  opacity: 0.4;   /*透明度*/
+}
+.bgMiddle {
+  opacity: 0.6;
+}
+/* .bgBottom {
+  opacity: 0.8; 
+} */
+
+.wave {
+  position: absolute;
+  left: 0;
+  width: 2160rpx;
+  height: 100%;
+  background-repeat: repeat no-repeat;
+  background-position: 0 bottom;
+  transform-origin: center bottom;
+}
+
+.wave image {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+
+}
+
+.waveAnimation .waveTop {
+  animation: move_wave 13s linear infinite;
+}
+.waveAnimation .waveMiddle {
+  animation: move_wave 18s linear infinite;
+}
+.waveAnimation .waveBottom {
+  animation: move_wave 9s linear infinite;
+}
+
+
+
+
+
+
+.wificonfig{
+  padding-top: 200rpx;
+}
+
+.inputbox{
+  margin-top: 50rpx;
+}
+
+.weui-input{
+  height: 100rpx;
+  width: 80%;
+  margin-left: auto;    /* 居中  */
+  margin-right: auto;  /* 居中  */
+  border: 1rpx solid black;
+  font-size: 40rpx;
+}
+
+.starButton{
+  margin-top: 50rpx;
+  margin-left: auto;    /* 居中  */
+  margin-right: auto;  /* 居中  */
+  width: 80%;
+}

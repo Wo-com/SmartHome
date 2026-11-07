@@ -1,0 +1,118 @@
+/* pages/Control/Ftask/Ftask.wxss */
+
+/*顶部导航栏  fiexd布局 topviewbox占据塌陷位置*/
+@keyframes move_wave {
+  0% {
+    transform: translateX(0) translateZ(0) scaleY(1);
+  }
+  50% {
+    transform: translateX(-25%) translateZ(0) scaleY(1);
+  }
+  100% {
+    transform: translateX(-50%) translateZ(0) scaleY(1);
+  }
+}
+
+.waveWrapper {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+   /* background : linear-gradient(to right bottom,  #f80ed9 0%,#eb2546 100%); */
+     background: linear-gradient(to right bottom, #0cceff 0%, #3c4de6 100%);
+
+}
+
+.waveWrapperInner {
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
+  height: 100%;
+  bottom: -1rpx;
+}
+
+.bgTop {
+  opacity: 0.4;   /*透明度*/
+}
+.bgMiddle {
+  opacity: 0.6;
+}
+/* .bgBottom {
+  opacity: 0.8; 
+} */
+
+.wave {
+  position: absolute;
+  left: 0;
+  width: 2160rpx;
+  height: 100%;
+  background-repeat: repeat no-repeat;
+  background-position: 0 bottom;
+  transform-origin: center bottom;
+}
+
+.wave image {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+.waveAnimation .waveTop {
+  animation: move_wave 13s linear infinite;
+}
+.waveAnimation .waveMiddle {
+  animation: move_wave 18s linear infinite;
+}
+.waveAnimation .waveBottom {
+  animation: move_wave 9s linear infinite;
+}
+
+
+
+
+.body{
+  width: 100%;
+  display: flex;
+  flex-direction: column;	/*横向布局*/
+
+  align-items: center;	/*居中*/
+
+
+
+}
+
+.taskbox{
+  width: 94%;
+  border:1rpx solid #c6c6c6;
+  background-color: white;
+  border-radius: 20rpx;
+   margin: 10rpx;
+  /* padding: 20rpx; */
+}
+.title{
+  border-bottom: 1rpx solid #F8F8F8;
+ display: flex;
+  flex-direction: row;	/*横向布局*/
+  align-items: center;	/* 上下居中 */
+  justify-content:space-between;	
+}
+
+.taskname{
+  width: 90rpx;
+  height: 60rpx;
+  overflow: hidden;     /*多余的隐藏*/
+  font-size: 40rpx;
+  text-align: center;
+  margin-left: 40%;
+  /* border: 1rpx solid red; */
+}
+.title image{
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.taskContent{
+  margin: 20rpx;
+}
+.tasktf{
+  margin: 20rpx;
+}

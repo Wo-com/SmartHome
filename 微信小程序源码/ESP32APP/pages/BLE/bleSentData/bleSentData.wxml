@@ -1,0 +1,54 @@
+<!--pages/funtionPage/funtionPage.wxml-->
+
+<!-- 顶部栏 -->
+ <view class="waveWrapper waveAnimation" style="height:{{navtop+navheigh*1.5}}px;">
+	<view class="waveWrapperInner bgTop" >
+		<view class="wave waveTop" style="background-image: url({{navimage}});background-size: 540rpx {{navheigh}}px;"></view>
+	</view>
+	<view class="waveWrapperInner bgMiddle">
+		<view class="wave waveMiddle" style="background-image: url({{navimage}});  background-size: 1080rpx {{navheigh*0.8}}px;"></view>
+	</view>
+	<view class="waveWrapperInner bgBottom;">
+		<view class="wave waveBottom" style="background-image: url({{navimage}});  background-size: 540rpx {{navheigh*0.6}}px;"></view>
+	</view>
+
+  <view bindtap="backPage" >
+    <image style=" position:absolute; top:{{navtop+navheigh*0.2}}px; left:{{navheigh*0.4}}px; height:{{navheigh*0.6}}px; width:{{navheigh*0.4}}px "  src="/icon/back.png"></image>
+    <text  style=" position:absolute; top:{{navtop}}px; left:{{navheigh*1.2}}px; height:{{navheigh}}px;line-height:{{navheigh}}px;  font-size: {{navheigh*0.6}}px;">蓝牙连接</text> 
+  </view>
+</view>
+
+
+<view class='bluetooth-detail'>
+  <!-- <view>当前连接的蓝牙设备是：</view> -->
+  <view>设备名：{{name}}</view>
+  <view>设备ID：{{deviceId}}</view>
+</view>
+
+<view class='card'>
+  <view>展示信息(可滑动查看)：</view>
+  <view>
+    <scroll-view scroll-y="true" class='text-box list'>
+      <text>{{textLog}}</text>
+    </scroll-view>
+  </view>
+</view>
+
+
+<!-- 底部按钮 -->
+<view class='function-button-box'>
+
+
+  <view class="clearn-close">
+     <view  class="bt" bindtap="startClear">清空显示</view>
+     <view  class="bt" bindtap="closeBLEConnection">断开蓝牙</view> 
+  </view>
+
+
+ <view class="inputBottom" style='bottom:{{inputBottom}}px'>
+    <input class="input" type="text" cursor-spacing="20" bindinput="orderInput" bindblur="blur"  bindfocus="foucus" adjust-position='{{false}}' placeholder="请输入指令" value='{{accountInputStr}}'/>
+    <view bindtap='sentOrder' class="sentn">发送</view>
+  </view>
+
+
+</view>

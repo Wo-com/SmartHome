@@ -1,0 +1,85 @@
+#微信小程序常量
+wechatdata:
+  appid: wx30***8934***
+  secret: aede9c07***d928ecd08414***
+
+#SpringBoot端口
+server:
+  port: 8848
+
+# DataSource Config
+spring:
+  #数据库连接配置
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost/smarthome?characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: *****
+#spring:
+#  #数据库连接配置
+#  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://106.15.178.19/mybatis?characterEncoding=utf-8&useSSL=false
+##&serverTimezone=GMT%2B8
+#    username: root
+#    password: zgx1734475W
+
+
+
+## 启用shutdown
+#  management.endpoint.shutdown.enabled=true
+#  # 公开所有的端点
+#  management.endpoints.web.exposure.include=*
+
+# 启用shutdown
+management:
+  endpoints:
+    web:
+      exposure:
+        # 暴露的端口
+        include: shutdown
+      base-path: /GuaWa
+  endpoint:
+    shutdown:
+      #开启shutdown
+      enabled: true
+  server:
+    #自定义关闭服务端口
+    port: 8858
+    # 不允许远程管理连接(不允许外部调用保证安全)
+    address: 127.0.0.1
+
+###################
+#  #  MQTT 配置
+#  ##################
+#  # 用户名
+#  mqtt.username=admin
+#  # 密码
+#  mqtt.password=password
+#  # 推送信息的连接地址，如果有多个，用逗号隔开，如：tcp://127.0.0.1:61613,tcp://192.168.1.61:61613
+#  mqtt.url=tcp://127.0.0.1:61613
+#  ##################
+#  #  MQTT 生产者
+#  ##################
+#  # 连接服务器默认客户端ID
+#  mqtt.producer.clientId=mqttProducer
+#  # 默认的推送主题，实际可在调用接口时指定
+#  mqtt.producer.defaultTopic=topic1
+#  ##################
+#  #  MQTT 消费者
+#  ##################
+#  # 连接服务器默认客户端ID
+#  mqtt.consumer.clientId=mqttConsumer
+#  # 默认的接收主题，可以订阅多个Topic，逗号分隔
+#  mqtt.consumer.defaultTopic=topic1
+mqtt:
+  username: admin
+  password: public
+  url: tcp://106.*.178.*:1883
+  producer:
+    clientId: mqttProducer
+    defaultTopic: topic1
+  consumer:
+    clientId: mqttConsumer
+    defaultTopic: topic1
+

@@ -1,0 +1,258 @@
+/* pages/Control/Aswitch/Aswitch.wxss */
+
+/*顶部导航栏  fiexd布局 topviewbox占据塌陷位置*/
+/*顶部导航栏  fiexd布局 topviewbox占据塌陷位置*/
+@keyframes move_wave {
+  0% {
+    transform: translateX(0) translateZ(0) scaleY(1);
+  }
+  50% {
+    transform: translateX(-25%) translateZ(0) scaleY(1);
+  }
+  100% {
+    transform: translateX(-50%) translateZ(0) scaleY(1);
+  }
+}
+
+.waveWrapper {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  background: linear-gradient(to right bottom, #9EFBD3 0%, #45D4FB 100%);
+  
+}
+
+.waveWrapperInner {
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
+  height: 100%;
+  bottom: -1rpx;
+}
+
+.bgTop {
+  opacity: 0.4;   /*透明度*/
+}
+.bgMiddle {
+  opacity: 0.6;
+}
+/* .bgBottom {
+  opacity: 0.8; 
+} */
+
+.wave {
+  position: absolute;
+  left: 0;
+  width: 2160rpx;
+  height: 100%;
+  background-repeat: repeat no-repeat;
+  background-position: 0 bottom;
+  transform-origin: center bottom;
+}
+
+.wave image {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+
+}
+
+.waveAnimation .waveTop {
+  animation: move_wave 13s linear infinite;
+}
+.waveAnimation .waveMiddle {
+  animation: move_wave 18s linear infinite;
+}
+.waveAnimation .waveBottom {
+  animation: move_wave 9s linear infinite;
+}
+
+
+ 
+/***  列表栏  **/
+.sw_item{
+  font-size: 35rpx;
+  height: 100rpx;
+  border-radius: 20rpx;
+  background: #fff;
+  margin: 20rpx;
+  border: 1rpx solid #c6c6c6;
+
+
+  display: flex;
+  flex-direction: row;	/*横向布局*/
+  /* flex-wrap:wrap;      			内容过多换行 */
+  align-items: center;	/* 上下居中 */
+  justify-content:space-between;	/*两端对齐*/
+  
+  
+}
+
+/*空框占据位置  防止没有名字*/
+.empbox{
+ width: 150rpx;
+ height: 100rpx;
+ /* border: 1rpx solid red; */
+position: absolute;
+}
+
+/* left */
+.sw_tit{
+  /* border: 1rpx solid black; */
+  padding-left: 3%;
+  /* width: 30%; */
+  height: 100rpx;
+  line-height: 100rpx;
+}
+
+
+/* right */
+.sw_ico{
+  /* border: 1rpx solid blueviolet; */
+  padding-right: 2%;
+}
+
+
+
+
+
+
+.body{
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  position: fixed;
+  display: flex;
+}
+
+.body button{
+  height: 100rpx;
+}
+
+
+
+
+/**** 弹出 输入 框*****/
+
+/* 防止误触蒙版 */
+.model{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  z-index: 999;
+  opacity: 0.5;
+  top: 0;
+  left:0;
+}
+
+.modalDlg{
+  width: 80%;
+  position: fixed;
+  top:350rpx;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 10rpx;
+  /* display: flex;
+  flex-direction: column; 
+  align-items: center; */
+}
+
+/* .title{
+  text-align: center;
+  line-height: 80rpx;
+  height: 80rpx;
+  width: 100%;
+  color: #0081ff;
+   border: 1rpx solid black; 
+} */
+
+.inputBox{
+   height: 65rpx;
+   border-bottom:1rpx solid #c6c6c6;
+    display: flex;
+  flex-direction: row; 
+  align-items: center;
+ justify-content: space-around;
+}
+
+.wish_put{
+  /* padding-left:30rpx; */
+  height: 40rpx;
+  padding-left: 10rpx;
+  /* border: 1px solid #000; */
+  /* border-radius: 10rpx; */
+}
+
+.btnBox{
+  display: flex;
+  flex-direction: row;
+  align-items: center;	           /*上下居中*/
+  justify-content: space-around;   /*左右对齐*/
+
+  height: 100rpx;
+  width: 100%;
+  
+  /* border: 1px solid #000;  */
+font-size: 40rpx;
+text-align: center;
+}
+.isbtn{
+  width: 50%;
+  color: #0c7aa5;
+  /* border-right: 1rpx solid black; */
+
+}
+.centerLine{
+  width: 1px;
+  background-color: #c6c6c6;
+  height: 100rpx;
+}
+ .bkbtn{
+  width: 50%;
+
+  color: #0b9c1f;
+   
+ }
+
+.starClockBox{
+  height: 65rpx;
+    line-height: 65rpx;
+  /* border: 1rpx solid red;  */
+  border-bottom:1rpx solid #c6c6c6;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.endClockBox{
+  height: 65rpx;
+    line-height: 65rpx;
+  border-bottom:1rpx solid #c6c6c6;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+/* 选择时间 */
+.tui-picker-content{
+  padding: 30rpx;
+  text-align: center;
+}
+.tui-picker-name{
+  height: 66rpx;
+  line-height: 66rpx;
+}
+.tui-picker-detail{
+  height: 66rpx;
+  line-height: 66rpx;
+  /* background-color: yellow; */
+  font-size: 35rpx;
+  padding: 0 10px;
+  overflow: hidden;
+}

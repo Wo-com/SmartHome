@@ -1,0 +1,76 @@
+<!--pages/Control/Edetector/Edetector.wxml-->
+<!-- 顶部栏 -->
+ <view class="waveWrapper waveAnimation" style="height:{{navtop+navheigh*1.5}}px;">
+	<view class="waveWrapperInner bgTop" >
+		<view class="wave waveTop" style="background-image: url({{navimage}});background-size: 540rpx {{navheigh}}px;"></view>
+	</view>
+	<view class="waveWrapperInner bgMiddle">
+		<view class="wave waveMiddle" style="background-image: url({{navimage}});  background-size: 1080rpx {{navheigh*0.8}}px;"></view>
+	</view>
+	<view class="waveWrapperInner bgBottom;">
+		<view class="wave waveBottom" style="background-image: url({{navimage}});  background-size: 540rpx {{navheigh*0.6}}px;"></view>
+	</view>
+
+  <view  bindtap="backPage">
+    <image style=" position:absolute; top:{{navtop+navheigh*0.2}}px; left:{{navheigh*0.4}}px; height:{{navheigh*0.6}}px; width:{{navheigh*0.4}}px "  src="/icon/back.png"></image>
+    <text  style=" position:absolute; top:{{navtop}}px; left:{{navheigh*1.2}}px; height:{{navheigh}}px;line-height:{{navheigh}}px;  font-size: {{navheigh*0.6}}px;">条件控制</text> 
+  </view>
+</view>
+
+
+<!--  -->
+<view class="content" >
+
+  <view class="buzzerCondition">
+    <view class="buzzerhead">
+      <image src="/icon/mus.png"></image>
+      <view class="title">蜂鸣器条件</view>
+      <picker mode="multiSelector" bindchange="bindMultiPickerChange" value="{{multiIndex}}" range="{{multiArray}}"  >
+        <view class="conditionType"> 设置</view>
+      </picker>
+    </view>
+
+   
+    <view class="buzzerbody">
+    当{{multiArray[0][multiIndex[0]]}}的值{{multiArray[1][multiIndex[1]]}}{{multiArray[2][multiIndex[2]]}}时，警报响起。
+    </view>
+  </view>
+
+  <view class="buzzerCondition">
+    <view class="buzzerhead">
+      <image src="/icon/fan.png"></image>
+      <view class="title">电风扇条件</view>
+      <picker mode="multiSelector" bindchange="bindfanPickerChange" value="{{fanIndex}}" range="{{fanboxArry}}"  >
+        <view class="conditionType"> 设置</view>
+      </picker>
+    </view>
+
+   
+    <view class="buzzerbody">
+    当{{fanboxArry[0][fanIndex[0]]}}的值{{fanboxArry[1][fanIndex[1]]}}{{fanboxArry[2][fanIndex[2]]}}时，设置{{fanboxArry[3][fanIndex[3]]}}的值为{{fanboxArry[4][fanIndex[4]]}}
+    </view>
+  </view>
+
+  <view class="buzzerCondition">
+    <view class="buzzerhead">
+      <image src="/icon/ir.png"></image>
+      <view class="title">红外人体检测条件</view>
+      <picker mode="multiSelector" bindchange="bindhaveManChange" value="{{manIndex}}" range="{{haveManArry}}"  >
+        <view class="conditionType"> 设置</view>
+      </picker>
+    </view>
+
+   
+    <view class="buzzerbody">
+      <view  wx:if='{{haveman}}'>
+        当红外活体检测{{haveManArry[0][manIndex[0]]}}时，警报{{haveManArry[1][manIndex[1]]}}并且设置{{haveManArry[2][manIndex[2]]}}为{{haveManArry[3][manIndex[3]]}}状态。
+      </view>
+      <view wx:else>
+        红外活体检测关闭
+      </view>
+    </view>
+  </view>
+
+  
+</view>
+

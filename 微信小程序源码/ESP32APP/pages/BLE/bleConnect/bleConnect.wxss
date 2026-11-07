@@ -1,0 +1,171 @@
+/*顶部导航栏  fiexd布局 topviewbox占据塌陷位置*/
+@keyframes move_wave {
+  0% {
+    transform: translateX(0) translateZ(0) scaleY(1);
+  }
+  50% {
+    transform: translateX(-25%) translateZ(0) scaleY(1);
+  }
+  100% {
+    transform: translateX(-50%) translateZ(0) scaleY(1);
+  }
+}
+
+.waveWrapper {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+background-image: linear-gradient(-20deg, #b721ff 0%, #21d4fd 100%);
+}
+
+.waveWrapperInner {
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
+  height: 100%;
+  bottom: -1rpx;
+}
+
+.bgTop {
+  opacity: 0.4;   /*透明度*/
+}
+.bgMiddle {
+  opacity: 0.6;
+}
+/* .bgBottom {
+  opacity: 0.8; 
+} */
+
+.wave {
+  position: absolute;
+  left: 0;
+  width: 2160rpx;
+  height: 100%;
+  background-repeat: repeat no-repeat;
+  background-position: 0 bottom;
+  transform-origin: center bottom;
+}
+
+.wave image {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+
+}
+
+.waveAnimation .waveTop {
+  animation: move_wave 13s linear infinite;
+}
+.waveAnimation .waveMiddle {
+  animation: move_wave 18s linear infinite;
+}
+.waveAnimation .waveBottom {
+  animation: move_wave 9s linear infinite;
+}
+
+
+
+
+
+.log {
+  width: 90%;
+  left: 5%;
+  position: relative;
+  margin-top: 10rpx;
+}
+.scroll-list {
+  max-height: 300rpx;
+}
+
+.text-box{
+  margin-bottom: 10rpx;
+  padding: 10rpx 0;
+  display: flex;
+  min-height: 50rpx;
+  /* background-color: #78e2f5; */
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 30rpx;
+  color: black;
+  line-height: 2em;
+}
+
+.btn{
+  background-color: #42AFFB;
+  color: white;
+}
+
+
+.ble-box{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+   align-items: center;     /* 垂直居中 */
+}
+
+.right image{
+  width: 100rpx;
+  height: 100rpx;
+}
+
+
+.scan-view {
+  width: 90%;
+  margin-left: 5%;
+  margin-top: 10rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between
+}
+.scan-view button {
+position:relative;
+display:block;
+margin-left:auto;
+margin-right:auto;
+padding-left:18px;
+padding-right:18px;
+box-sizing:border-box;
+font-size:18px;
+width: 48%;
+}
+/* 
+.devices_summary {
+  
+  margin-top: 30px;
+  padding: 10px 5%;
+  font-size: 16px;
+} */
+.device_list {
+  height: 400rpx;
+  margin: 50px 5%;
+  margin-top: 30rpx;
+  border: 1px solid #EEE;
+  border-radius: 5px;
+  width: auto;
+}
+.device_item {
+  border-bottom: 1px solid #EEE;
+  padding: 10px;
+  color: #666;
+}
+.device_item_hover {
+  background-color: rgba(0, 0, 0, .1);
+}
+
+image{
+  height:400rpx;
+  width: 100%;
+  /* border: 1rpx solid red; */
+  /* background: linear-gradient(to right, rgb(50, 158, 247) , rgb(33, 223, 248)); */
+}
+
+
+
+.about-img {
+  position: fixed;
+  width: 60rpx;
+  height: 60rpx;
+  bottom: 30rpx;
+  right: 30rpx;
+}

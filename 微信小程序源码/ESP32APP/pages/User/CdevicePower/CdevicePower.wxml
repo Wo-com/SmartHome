@@ -1,0 +1,101 @@
+<!--pages/User/CdevicePower/CdevicePower.wxml-->
+
+<!-- 顶部栏 -->
+ <view class="waveWrapper waveAnimation" style="height:{{navtop+navheigh*1.5}}px;">
+	<view class="waveWrapperInner bgTop" >
+		<view class="wave waveTop" style="background-image: url({{navimage}});background-size: 540rpx {{navheigh}}px;"></view>
+	</view>
+	<view class="waveWrapperInner bgMiddle">
+		<view class="wave waveMiddle" style="background-image: url({{navimage}});  background-size: 1080rpx {{navheigh*0.8}}px;"></view>
+	</view>
+	<view class="waveWrapperInner bgBottom;">
+		<view class="wave waveBottom" style="background-image: url({{navimage}});  background-size: 540rpx {{navheigh*0.6}}px;"></view>
+	</view>
+
+  <view  bindtap="backPage">
+    <image style=" position:absolute; top:{{navtop+navheigh*0.2}}px; left:{{navheigh*0.4}}px; height:{{navheigh*0.6}}px; width:{{navheigh*0.4}}px "  src="/icon/back.png"></image>
+    <text  style=" position:absolute; top:{{navtop}}px; left:{{navheigh*1.2}}px; height:{{navheigh}}px;line-height:{{navheigh}}px;  font-size: {{navheigh*0.6}}px;">设备授权</text> 
+  </view>
+</view>
+
+
+
+<view class="content">
+  <view class="head" >
+  <!--  -->
+  </view>
+
+  <view class="body">
+    <view class="deviceItem">
+      <view class="devicetitle">已经激活的设备</view>
+      <view class="line"></view>
+      <view class="deviceBox">
+        
+        <view class="devices" wx:for="{{allDevice}}" wx:key="index">
+          
+          <view class="deviceIco"  data-id="{{item.deviceId}}" data-name="{{item.deviceName}}"  id="{{item.deviceId}}" bindtap="btnDevicechange">
+            <view wx:if="{{deviceID===item.deviceId}}">
+              <image  src="/icon/deviceA.png"></image>
+            </view>
+            <view wx:else>
+              <image  src="/icon/deviceB.png"></image>
+            </view>
+          </view>
+
+          <view class="deviceName">
+           {{item.deviceName}}
+          </view>
+        </view>
+
+      </view>
+    </view>
+
+    <view class="deviceUserItem"> 
+      <view class="devicetitle">设备当前使用者</view>
+      <view class="line"></view>
+      <view class="deviceUserBox">
+
+        <view class="deviceUser" wx:for="{{allUser}}" wx:key="index">
+          <view class="deviceIco"  bindtap='btnsetPower' data-userid="{{item.userId}}" >
+            <image src="{{item.userHeadUrl}}"></image>
+          </view>
+          <view class="deviceUserName">
+            {{item.userNickname}}
+          </view>
+        </view>
+
+      </view> 
+    </view>
+  </view>
+
+
+  
+<!-- 档板 其他地方不能点击--> 
+<view class="model" catchtouchmove='preventTouchMove' wx:if='{{showModal}}'></view>
+<!-- 盒子 -->
+<view class="modalDlg"  wx:if='{{showModal}}'>
+  <form bindsubmit="formSubmit" >
+    <checkbox-group bindchange="checkboxChange"  name="checkbox">
+      <view class="choosebox" >
+        <view class="item" wx:for="{{list}}" wx:key="index">
+          <!-- <checkbox value="{{item.id}},{{item.name}}"   checked="{{item.isChecked}}"> {{item.name}}</checkbox> -->
+          <checkbox value="{{item.id}}"   checked="{{item.isChecked}}"> {{item.name}}</checkbox> 
+        </view>
+      </view>
+    </checkbox-group>
+
+  
+
+    <view class="btnBox">
+      <view class="isbtn" >
+        <button formType="submit" >确定</button>
+      </view>
+      <view class="centerLine"></view>
+      <view class="bkbtn"  >
+        <button bindtap='back'>返回</button>
+      </view>
+    </view>
+  </form>
+</view>
+
+</view>

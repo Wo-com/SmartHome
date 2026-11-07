@@ -1,0 +1,128 @@
+<view class="content">
+
+<!--  -->
+
+  <view class="topScreen">
+    <view class="container">
+      <!-- stars -->
+      <view class="star star-1"></view>
+      <view class="star star-2"></view>
+      <view class="star star-3"></view>
+      <!-- clouds -->
+      <view class="cloud-group-1">
+        <view class="cloud cloud-1"></view>
+        <view class="cloud cloud-2"></view>
+        <view class="cloud cloud-3"></view>
+        <view class="cloud cloud-4"></view>
+        <view class="cloud cloud-5"></view>
+        <view class="cloud cloud-6"></view>
+      </view>
+      <view class="cloud-group-2">
+        <view class="cloud cloud-1"></view>
+        <view class="cloud cloud-2"></view>
+        <view class="cloud cloud-3"></view>
+        <view class="cloud cloud-4"></view>
+        <view class="cloud cloud-5"></view>
+        <view class="cloud cloud-6"></view>
+      </view>
+      <view class="cloud-group-3">
+        <view class="cloud cloud-1"></view>
+        <view class="cloud cloud-2"></view>
+        <view class="cloud cloud-3"></view>
+        <view class="cloud cloud-4"></view>
+        <view class="cloud cloud-5"></view>
+        <view class="cloud cloud-6"></view>
+      </view>
+      <!-- orbits -->
+      <view class="orbit orbit-1"></view>
+      <view class="orbit orbit-2"></view>
+      <view class="orbit orbit-3"></view>
+      <view class="orbit orbit-4"></view>
+      <view class="orbit orbit-5"></view>
+      <view class="orbit orbit-6"></view>
+      <!-- main planet -->
+      <view class="ring-before"></view>
+      <view class="ring-bigger-before"></view>
+      <!-- <view class="planet"></view> -->
+      <view class="ring-after"></view>
+      <view class="ring-bigger-after"></view>
+      <!-- sub planet -->
+      <view class="sub-planet ball1"></view>
+    </view>
+  </view>
+
+
+
+<!--  -->
+
+
+
+
+
+
+  <view class="head">
+
+    <block wx:if="{{hasUserInfo}}">
+      <view class="userinfo">
+        <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      </view>
+    </block>
+
+    <block wx:elif="{{canIUse}}">
+      <view class="userinfo-unbind">
+        <view class="userinfo">
+        <button class="login-button " open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button><!--不可见，用于触发微信授权的按钮 -->
+          <image class="userinfo-avatar" src="../../../icon/icon-head.png" mode="cover"></image>
+          <text class="userinfo-nickname">微信授权</text>
+        </view>
+        
+      </view>
+    </block>
+
+    <block wx:else>
+        <view class="update">升级版本</view>
+    </block>
+  </view>
+
+
+
+<!-- 容器 -->
+<scroll-view
+    scroll-y="true"
+    style="height: {{boxHeight}}px;"
+ >
+
+
+  <view class="tool">
+    <view class="toolist toolist1" bindtap="goToPageActive">
+      <text>激活设备</text>
+    </view>
+  
+
+    <view class="toolist toolist2" bindtap="goToPageBnetwork">
+      <text>设备联网</text>
+    </view>
+
+    <view class="toolist toolist3" bindtap="goToPageCdevicePower">
+      <text>设备管理</text>
+    </view>
+
+     <view class="toolist toolist4" bindtap="goToPageDhelp">
+      <text>使用说明</text>
+    </view>
+
+     <view class="toolist toolist5" bindtap="goToPageaboutMe">
+      <text>联系作者</text>
+    </view>
+
+    <view class="toolist toolist4" bindtap="goToPageabout">
+      <text>关于</text>
+    </view>
+  
+  </view>
+  
+</scroll-view>
+<!-- 容器 -->
+
+</view>

@@ -1,0 +1,103 @@
+/* pages/funtionPage/functionPage.wxss */
+
+/*顶部导航栏  fiexd布局 topviewbox占据塌陷位置*/
+@keyframes move_wave {
+  0% {
+    transform: translateX(0) translateZ(0) scaleY(1);
+  }
+  50% {
+    transform: translateX(-25%) translateZ(0) scaleY(1);
+  }
+  100% {
+    transform: translateX(-50%) translateZ(0) scaleY(1);
+  }
+}
+
+.waveWrapper {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  background: #6effff;
+}
+
+.waveWrapperInner {
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
+  height: 100%;
+  bottom: -1rpx;
+}
+
+.bgTop {
+  opacity: 0.4;   /*透明度*/
+}
+.bgMiddle {
+  opacity: 0.6;
+}
+/* .bgBottom {
+  opacity: 0.8; 
+} */
+
+.wave {
+  position: absolute;
+  left: 0;
+  width: 2160rpx;
+  height: 100%;
+  background-repeat: repeat no-repeat;
+  background-position: 0 bottom;
+  transform-origin: center bottom;
+}
+
+.wave image {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+
+}
+
+.waveAnimation .waveTop {
+  animation: move_wave 13s linear infinite;
+}
+.waveAnimation .waveMiddle {
+  animation: move_wave 18s linear infinite;
+}
+.waveAnimation .waveBottom {
+  animation: move_wave 9s linear infinite;
+}
+
+
+
+
+.bluetooth-detail {
+  background: linear-gradient(white, rgb(248, 248, 248));
+
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px 20px;
+}
+
+.card {
+  border-radius: 10rpx;
+  background-color: #fff;
+  margin: 20rpx;
+  padding: 20rpx;
+  box-shadow: 0 2rpx 4rpx rgba(0,0,0,.3);
+}
+.list {
+  max-height: 35vh;
+}
+
+
+
+
+
+
+/* 首行缩进 */
+.intro {
+  text-indent:56rpx;
+  /* font-size: 28rpx; */
+}
+/* 标题之间空格 */
+.paragraph{
+  padding-top: 20rpx;
+}
